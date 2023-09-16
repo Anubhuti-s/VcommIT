@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your LinkedIn Clone</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Style for the navigation bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #0077B5; /* LinkedIn Blue */
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            z-index: 100;
+        }
+
+        /* Style for the logo */
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Style for the search bar */
+        .search-bar {
+            flex: 0.4;
+            margin: 0 10px;
+            border-radius: 20px; /* Rounded corners */
+            padding: 10px 20px; /* Increase height and shorten width */
+            border: none;
+            outline: none;
+            background-color: #f1f1f1; /* Light gray background */
+        }
+
+        /* Style for the About Us link */
+        .about-us {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        /* Style for the user's profile button */
+        .profile-button {
+            background-color: #fff;
+            color: #0077B5; /* LinkedIn Blue */
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Container for the columns */
+        .container {
+            display: flex;
+            margin-top: 60px; /* Adjust as needed */
+            padding: 20px;
+            border-radius: 20px; /* Rounded corners */
+            background-color: #f1f1f1; /* Light gray background */
+        }
+
+        /* Style for the left and right columns *
+        .column {
+            flex: 1;
+            min-width: 150px; /* Smaller width *
+            background-color: #e1e1e1; /* Light blue background *
+            padding: 20px;
+            position: sticky;
+            top: 80px; /* Keep it below the navbar *
+            border-radius: 20px; /* Rounded corners *
+            overflow-y: auto; /* Enable scrolling if content exceeds the container height *
+            
+        }
+
+        /* Style for the middle container *
+        .middle-container {
+            flex: 2;
+            margin-left: 20px;
+            overflow-y: hidden; /* Hide scrollbar *
+        } */
+
+        /* Style for the left and right columns */
+.column {
+    flex: 1; /* Previous size */
+    min-width: 200px; /* Previous size */
+    background-color: #e1e1e1; /* Light blue background */
+    padding: 20px;
+    position: sticky;
+    top: 60px; /* Keep it below the navbar */
+    border-radius: 20px; /* Rounded corners */
+}
+
+/* Style for the middle container */
+.middle-container {
+    flex: 2; /* Previous size */
+    margin-left: 20px; /* Previous size */
+    overflow-y: hidden; /* Hide scrollbar */
+}
+
+
+        /* Style for buttons in the left and right columns */
+        .column button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: left;
+            border: none;
+            background-color: #b3d7ff; /* Light blue color */
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        /* Style for posts in the middle container */
+        .post {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        /* Style for circular buttons */
+    .circle-button {
+        width: 40px; /* Set the desired width */
+        height: 40px; /* Set the desired height */
+        border-radius: 50%; /* Make it circular */
+        background-color: #0077B5; /* LinkedIn Blue */
+        color: #fff; /* Text color */
+        border: none; /* Remove border */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px; /* Adjust the font size */
+        cursor: pointer;
+        margin-right: 5px; /* Add some spacing between buttons */
+    }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">Your Logo</div>
+        <input type="text" class="search-bar" placeholder="Search...">
+        <a href="#" class="about-us">About Us</a>
+        <button class="profile-button">Your Profile</button>
+    </div>
+
+    <!-- Container for Columns -->
+    <div class="container">
+        <!-- Left Column -->
+        <div class="column">
+            <button>Button 1</button>
+            <button>Button 2</button>
+            <!-- Add more buttons as needed -->
+        </div>
+
+        <!-- Middle Column (Scrollable Feed) -->
+        <div class="middle-container">
+            <!-- Sample Post 1 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="profile1.jpg" alt="Profile Picture" class="profile-pic">
+                    <h3 class="profile-name">John Doe</h3>
+                </div>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus itaque laboriosam voluptas quae repellendus rerum saepe odit cumque quis, doloremque ex, doloribus fuga repellat possimus aspernatur delectus vero! Doloremque quae quo dolores maiores neque officiis illo similique nesciunt cum exercitationem. Fuga voluptate maxime ipsam tempore est nisi dolorum sint sit eveniet perferendis corrupti quasi optio saepe vero, velit sequi ex provident odio pariatur accusamus exercitationem ratione maiores veritatis placeat! Dignissimos unde voluptate ratione nemo deserunt numquam qui eum pariatur blanditiis nulla hic enim fuga ipsum, sunt eius cum animi esse aliquid ipsa similique quis inventore, beatae architecto. Repellat, ut repellendus?
+                </p><hr>
+                <div class="post-actions">
+                    <button class="circle-button">Like</button>
+                    <button class="circle-button">Comment</button>
+                    <button class="circle-button">Share</button>
+                    <button class="circle-button">Save</button>
+                </div>
+        </div>
+
+        <!-- Sample Post 2 -->
+        <div class="post">
+            <div class="post-header">
+                <img src="profile2.jpg" alt="Profile Picture" class="profile-pic">
+                <h3 class="profile-name">Jane Smith</h3>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est labore excepturi exercitationem ad praesentium quo culpa eligendi? Eius, ea excepturi voluptas blanditiis delectus earum corrupti rem corporis optio. Totam dignissimos, eius, iusto recusandae dolorum vero molestiae iste praesentium ipsa molestias harum cupiditate placeat, temporibus odio tenetur neque laudantium veritatis. Laborum, nihil! Magni esse reiciendis, nulla ea quo illo fugit soluta facilis voluptatem omnis recusandae sed consectetur libero id, cupiditate voluptates! In accusamus distinctio placeat nisi eveniet vitae provident illum tempore architecto porro odit ratione, possimus repudiandae deleniti fugit laborum nesciunt assumenda! Eaque quidem nostrum, minima distinctio veritatis sint neque quod.</p>
+            <div class="post-actions">
+                <button class="circle-button">Like</button>
+                <button class="circle-button">Comment</button>
+                <button class="circle-button">Share</button>
+                <button class="circle-button">Save</button>
+            </div>
+        </div>
+
+        <!-- Sample Post 3 -->
+        <div class="post">
+            <div class="post-header">
+                <img src="profile2.jpg" alt="Profile Picture" class="profile-pic">
+                <h3 class="profile-name">Jane Smith</h3>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est labore excepturi exercitationem ad praesentium quo culpa eligendi? Eius, ea excepturi voluptas blanditiis delectus earum corrupti rem corporis optio. Totam dignissimos, eius, iusto recusandae dolorum vero molestiae iste praesentium ipsa molestias harum cupiditate placeat, temporibus odio tenetur neque laudantium veritatis. Laborum, nihil! Magni esse reiciendis, nulla ea quo illo fugit soluta facilis voluptatem omnis recusandae sed consectetur libero id, cupiditate voluptates! In accusamus distinctio placeat nisi eveniet vitae provident illum tempore architecto porro odit ratione, possimus repudiandae deleniti fugit laborum nesciunt assumenda! Eaque quidem nostrum, minima distinctio veritatis sint neque quod.</p>
+            <div class="post-actions">
+                <button class="circle-button">Like</button>
+                <button class="circle-button">Comment</button>
+                <button class="circle-button">Share</button>
+                <button class="circle-button">Save</button>
+            </div>
+        </div>
+
+        <!-- Sample Post 4 -->
+        <div class="post">
+            <div class="post-header">
+                <img src="profile2.jpg" alt="Profile Picture" class="profile-pic">
+                <h3 class="profile-name">Jane Smith</h3>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est labore excepturi exercitationem ad praesentium quo culpa eligendi? Eius, ea excepturi voluptas blanditiis delectus earum corrupti rem corporis optio. Totam dignissimos, eius, iusto recusandae dolorum vero molestiae iste praesentium ipsa molestias harum cupiditate placeat, temporibus odio tenetur neque laudantium veritatis. Laborum, nihil! Magni esse reiciendis, nulla ea quo illo fugit soluta facilis voluptatem omnis recusandae sed consectetur libero id, cupiditate voluptates! In accusamus distinctio placeat nisi eveniet vitae provident illum tempore architecto porro odit ratione, possimus repudiandae deleniti fugit laborum nesciunt assumenda! Eaque quidem nostrum, minima distinctio veritatis sint neque quod.</p>
+            <div class="post-actions">
+                <button class="circle-button">Like</button>
+                <button class="circle-button">Comment</button>
+                <button class="circle-button">Share</button>
+                <button class="circle-button">Save</button>
+            </div>
+        </div>
+            <!-- Add more posts dynamically using server-side or JavaScript -->
+        </div>
+
+        <!-- Right Column -->
+        <div class="column">
+            <button>Button 3</button>
+            <button>Button 4</button>
+            <!-- Add more buttons as needed -->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+.image-cropper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+    
+    display: inline;
+    margin: 0 20px;
+    margin-left:2%;
+    width:150px ;
+    height: 50px;
+    
+}
+/* .profile-pic {
+    display: inline;
+    margin: 0 auto;
+    margin-left: -25%; 
+    height: 100%;
+    width: auto;
+  } */
+/* Top Navigation Bar */
+.top-container {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 15px;
+}
+
+.logo-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #f00; /* Placeholder for the logo circle */
+    border-radius: 50%;
+}
+
+.search-bar {
+    flex:0.9; 
+    margin: 10px 5px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 5px;
+   
+}
+
+.search-bar input[type="text"] {
+    border: none;
+    padding: 5px;
+    flex: 1;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: #0077B5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    
+}
+
+.home-button,
+.about-button,
+.profile-button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    cursor: pointer;
+    margin-right: 50px;
+}
+
+.home-button {
+    margin-right: 5px; /* Add margin to separate from other buttons */
+}
+.about-button{
+    margin-right: 5px;
+}
+
+/* Container for Teams/Groups and Personal Chats */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Left Container for Teams/Groups */
+.left-container {
+    background-color: #eee;
+    flex: 1; /* Make it expand to fill available space */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer; /* Add cursor pointer to indicate clickable */
+}
+
+.team-box {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.team-box a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+/* Right Container for Personal Chats */
+.right-container {
+    background-color: #fff;
+    flex: 1; /* Make it expand to fill available space */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chat {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chat-header h3 {
+    margin: 0;
+}
+
+.chat-messages {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.message {
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.received {
+    background-color: #f0f0f0;
+    text-align: left;
+}
+
+.sent {
+    background-color: #DCF8C6;
+    text-align: right;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.chat-input input[type="text"] {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.chat-input button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+/* Right Panel for Personal Chat List */
+.right-panel {
+    background-color: #eee;
+    flex: 1;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+.chat-list {
+    list-style: none;
+    padding: 0;
+}
+
+.chat-list li {
+    margin-bottom: 10px;
+}
+
+.chat-list a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}

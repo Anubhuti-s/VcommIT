@@ -1,0 +1,198 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+.home-button {
+    margin-right: 10px; /* Add margin to separate from other buttons */
+}
+.home-button,
+.about-button,
+.profile-button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Top Container */
+.top-container {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+/* Search Bar */
+.search-bar {
+    flex: 1;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.search-bar input[type="text"] {
+    border: none;
+    padding: 5px;
+    flex: 1;
+    outline: none;
+}
+
+.search-bar input[type="text"]:focus {
+    box-shadow: 0 0 5px #00f; /* Add a focus indicator */
+}
+
+.search-bar button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+/* Top Container */
+.top-container {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 100%;
+}
+
+.logo-circle {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(145, 126, 240); /* Placeholder for the logo circle */
+    border-radius: 50%;
+}
+
+/* .search-bar input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+} */
+
+/* .top-container button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+} */
+
+/* Container for Left, Middle, and Right Columns */
+.main-container {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to the next row */
+    gap: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    height: 100%;
+}
+
+/* Left Container */
+.left-container {
+    background-color: #eee;
+    flex: 1; /* Make it expand to fill available space */
+    padding: 20px;
+    height: 600px;
+}
+
+.left-container button {
+    display: block;
+    width: 400px; /* Adjust the width as needed */
+    height: 80px;
+    background-color: #47ccea;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 30px 55px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Middle Container */
+.middle-container {
+    background-color: #fff;
+    flex: 2; /* Make it expand to fill available space */
+    padding: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 600px; /* Limit the height for scrolling */
+}
+
+.post {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Right Container */
+.right-container {
+    background-color: #eee;
+    flex: 1; /* Make it expand to fill available space */
+    padding: 20px;
+    height: 600px;
+}
+
+.right-container button {
+    display: block;
+    width: 400px; /* Adjust the width as needed */
+    height: 80px;
+    background-color: #47ccea;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 30px 55px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.text{
+    margin-left: 20px;
+    font-family: cursive;
+    font-size:25px;
+    align-items: center;
+}
+
+.leftside,.rightside{
+    height:50vh;
+    width:100%;
+    font-family: cursive;
+
+}
+@media screen and (min-width:768px)
+{
+    .leftside,.rightside{
+        
+        height:100vh;
+
+    }
+}
+.leftside{
+    background:rgb(181, 217, 89);
+}
+.rightside{
+    background:rgb(112, 112, 184);
+}
