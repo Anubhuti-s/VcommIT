@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Projects</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0215e0;
+        }
+
+        /* Project List Styles */
+        .project-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .project-item:hover {
+            transform: scale(1.02);
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-title {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #0215e0;
+        }
+
+        .project-description {
+            font-size: 1.0rem;
+            color: #646464;
+        }
+
+        .project-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .project-unsave-btn,
+        .project-view-btn {
+            font-size: 1.0rem;
+            font-weight: bold;
+            border: none;
+            padding: 16px 16px;
+            margin-right: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ffa500; /* Change the background color to #ffa500 */
+            color: #000000;
+            transition: background-color 0.2s;
+        }
+
+        .project-unsave-btn:hover,
+        .project-view-btn:hover {
+            background-color: #fcbf4d;
+        }
+
+        /* Description Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 20% auto;
+            padding: 20px;
+            border-radius: 5px;
+            width: 70%;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2); /* Add shadow here */
+        }
+
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <br><br><br><h1>Saved Projects</h1>
+        <ul class="project-list" id="projectList">
+            <!-- Project Items Will Be Added Here -->
+        </ul>
+    </div>
+
+    <!-- Description Modal -->
+    <div id="descriptionModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <!-- JavaScript for Dynamic Project Addition, Removal, and Description Modal -->
+    <script>
+        const projectList = document.getElementById("projectList");
+        const descriptionModal = document.getElementById("descriptionModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
+
+        // Function to add a project to the list
+        function savedproject(title, description, projectUrL) {
+            const projectItem = document.createElement("li");
+            projectItem.className = "project-item";
+            projectItem.innerHTML = `
+                <div class="project-info">
+                    <p class="project-title">${title}</p>
+                    <p class="project-description">${description}</p>
+                </div>
+                <div class="project-buttons">
+                    <button class="project-view-btn" onclick="openModal('${title}', '${description}')">View</button>
+                    <button class="project-unsave-btn" onclick="removeProject(this)">Unsave</button>
+                </div>`;
+            projectList.appendChild(projectItem);
+        }
+
+        function openModal(title, description) {
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            descriptionModal.style.display = "block";
+        }
+
+        function closeModal() {
+            descriptionModal.style.display = "none";
+        }
+
+        function removeProject(button) {
+            const projectItem = button.parentElement.parentElement;
+            projectList.removeChild(projectItem);
+        }
+
+        // Example usage to add a project
+        savedproject("Inventory Management System", "A web-based or desktop application to manage inventory, track stock levels,<br> and generate reports for businesses", "project1.html");
+        savedproject("Real-time Data Analytics Dashboard", "A dashboard that can process and visualize real-time data streams, making it<br> suitable for monitoring network traffic, social media trends, or IoT sensor data", "project2.html");
+        savedproject("Virtual Reality (VR) Game", "An immersive VR game that utilizes 3D graphics, interactive environments, and<br> motion controllers for an engaging gaming experience", "project3.html");
+        savedproject("Traffic Management System", "A system that uses sensors and real-time data to optimize traffic flow,<br> reduce congestion, and improve transportation efficiency", "project4.html");
+        savedproject("Natural Language Processing for Sentiment Analysis", "A sentiment analysis tool that analyzes text data<br> from social media, reviews, or news articles to determine sentiment and trends", "project5.html");
+        savedproject("Mobile App for Task Management", "A mobile app for task and project management, including features like task<br> creation, deadlines, notifications, and team collaboration", "project6.html");
+        // Add more projects as needed, with their project URLs
+    </script>
+</body>
+
+</html>
