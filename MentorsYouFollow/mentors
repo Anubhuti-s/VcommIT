@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentors You Follow</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #0e1576;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .search-bar {
+            flex: 0.4;
+            margin: 0 10px;
+            border-radius: 20px;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        .about-us {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .profile-button {
+            background-color: #fff;
+            color: #0e1576;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0e1576;
+        }
+
+        /* Mentor List Styles */
+        .mentor-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mentor-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.2s;
+        }
+
+        .mentor-item:hover {
+            transform: scale(1.02);
+        }
+
+        .mentor-item img {
+            max-width: 150px;
+            max-height: 180px;
+            border-radius: 50%;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .mentor-info {
+            flex: 1;
+        }
+
+        .mentor-name {
+            font-size: 1.5rem; /* Larger font size */
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Updated Mentor Description Styles */
+        .mentor-description {
+            font-size: 1.2rem; /* Larger font size */
+            color: #555;
+            line-height: 1.4;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Show 2 lines */
+            -webkit-box-orient: vertical;
+            margin-bottom: 10px;
+        }
+
+        /* Add a background color and padding to descriptions */
+        .mentor-description-container {
+            background-color: #f7f7f7;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Follow Button Styles */
+        .follow-button {
+            background-color: #eca115;
+            color: #fff;
+            border: none;
+            padding: 10px 20px; /* Larger padding */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem; /* Larger font size */
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .close-lightbox-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Your Logo</div>
+        <input type="text" class="search-bar" placeholder="Search">
+        <a href="#" class="about-us">About Us</a>
+        <button class="profile-button">Profile</button>
+    </nav>
+
+    <!-- Content Container -->
+    <div class="container">
+        <h1>Mentors You Follow</h1>
+        <ul class="mentor-list" id="mentorList">
+            <!-- Mentor Items Will Be Added Here -->
+        </ul>
+    </div>
+
+    <!-- Lightbox Container -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Mentor's Picture" id="lightbox-image">
+        <button onclick="closeLightbox()" class="close-lightbox-button">Close</button>
+    </div>
+
+    <!-- JavaScript for Dynamic Mentor Addition, Button Toggle, and Lightbox -->
+    <script>
+        // Function to open the lightbox
+        function openLightbox(imageUrl) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImage = document.getElementById("lightbox-image");
+            lightboxImage.src = imageUrl;
+            lightbox.style.display = "flex";
+        }
+
+        // Function to close the lightbox
+        function closeLightbox() {
+            const lightbox = document.getElementById("lightbox");
+            lightbox.style.display = "none";
+        }
+
+        // Function to add a mentor to the list
+        function addMentor(name, description, imageUrl, profileUrl, mentorId) {
+            const mentorList = document.getElementById("mentorList");
+            const mentorItem = document.createElement("li");
+            mentorItem.className = "mentor-item";
+            mentorItem.id = mentorId;
+            mentorItem.innerHTML = `
+                <img src="${imageUrl}" alt="${name}" onclick="openLightbox('${imageUrl}')">
+                <div class="mentor-info">
+                    <p class="mentor-name">${name}</p>
+                    <div class="mentor-description-container">
+                        <p class="mentor-description">${description}</p>
+                    </div>
+                </div>
+                <button class="follow-button" onclick="toggleFollow(this, '${mentorId}')">Unfollow</button>
+            `;
+            mentorList.appendChild(mentorItem);
+        }
+
+        // Function to navigate to mentor's profile
+        function navigateToProfile(profileUrl) {
+            window.location.href = profileUrl;
+        }
+
+        // Function to toggle Follow/Unfollow
+        function toggleFollow(button, mentorId) {
+            if (button.innerHTML === "Unfollow") {
+                button.innerHTML = "Follow";
+                button.style.backgroundColor = "#0077B5"; // Change to LinkedIn Blue
+                // Remove the mentor item from the list
+                const mentorItem = document.getElementById(mentorId);
+                if (mentorItem) {
+                    mentorItem.remove();
+                }
+            } else {
+                button.innerHTML = "Unfollow";
+                button.style.backgroundColor = "#ff5733"; // Change back to red
+            }
+        }
+
+        // Example usage to add mentors with unique IDs
+        addMentor("Kanika Banerjee", "Faculty cabin: FB1-307A, PH.D. (REMOTE SENSING)", "https://media.istockphoto.com/id/1330255708/photo/portrait-of-smiling-teacher-in-school-corridor-with-books-in-hand.jpg?s=612x612&w=0&k=20&c=uL_vENUw7dccgUwjGcIwMMU_5Ew9BM5C8A0jInwn_hk=", "mentor_profile_1.html", "mentor1");
+        addMentor("ANAND A.", "Faculty cabin: FB2-307A, PH.D. (INFORMATION TECHNOLOGY)", "https://media.istockphoto.com/id/1005817658/photo/middle-aged-man-with-pleasant-face-expression.jpg?s=612x612&w=0&k=20&c=3YTdAT-m9io-zEF2aOmJsRz7tKVHlHSHvDFSILp6FAY=", "mentor_profile_2.html", "mentor2");
+        addMentor("Dr Archana Acharya", "Faculty cabin: FB2-307A, PH.D. (REMOTE SENSING)", "https://us.123rf.com/450wm/virtosmedia/virtosmedia2302/virtosmedia230232717/198632390-portrait-of-a-young-indian-female-teacher-smiling-at-the-camera.jpg?ver=6", "mentor_profile_3.html", "mentor3");
+        addMentor("Prashant Ranjan Sahay", "Faculty cabin: FB1-307A, PH.D. (HUMAN RESOURCE MANAGEMENT)", "https://static.toiimg.com/thumb/msid-95674022,width-400,resizemode-4/95674022.jpg", "mentor_profile_4.html", "mentor4");
+        addMentor("Smt Indira Singh", "Faculty cabin: FB1-307A, PH.D. (COMPUTER ENGINEERING)", "https://t3.ftcdn.net/jpg/04/48/03/56/360_F_448035690_o2uvf0WcCJcOkjoiDhCqHZdqoi8KzQzO.jpg", "mentor_profile_5.html", "mentor5");
+        addMentor("Dr. Kshma Swarnkar", "Faculty cabin: FB2-307A, PH.D. (BANKING & FINANCE)", "https://media.istockphoto.com/id/1288039261/photo/portrait-of-a-smiling-middle-aged-man-of-indian-origin.jpg?s=612x612&w=0&k=20&c=hksg2MpAsM6pQSR-TASLnfFE4-sDPcYHyE6-edycJDI=", "mentor_profile_6.html", "mentor6");
+        
+        // ... (Add more mentors as needed with unique IDs)
+    </script>
+</body>
+</html>
+
+
+
+
+
+        
