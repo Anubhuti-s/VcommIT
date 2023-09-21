@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles_login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="orangeBG">
+            <div class="box signin">
+                <h2>Already Have An Account?</h2>
+                <button class="signinbtn">Sign In</button>
+            </div>
+            <div class="box signup">
+                <h2>Create An Account?</h2>
+                <button class="signupbtn">Register</button>
+            </div>
+        </div>
+        <div class="form-box">
+            <div class="form signinform">
+                <form>
+                    <h3>Sign In</h3>
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                    <input type="submit" value="Sign In">
+                    <a href="#">Forget Password?</a>
+                </form>
+            </div>
+            <div class="form signupform">
+                <form action="" onsubmit="signup(event)">
+                    <h3>Sign Up</h3>
+                    <input type="text" placeholder="Username" id="username">
+                    <input type="email" placeholder="Email Address" id="email">
+                    <input type="password" placeholder="Password" id="password">
+                    <input type="password" placeholder="Confirm Password" id="repass">
+                    <input type="submit" value="Sign Up" id="sgnup">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js_login.js"></script>
+    <script src="base_js.js"></script>
+</body>
+</html>
