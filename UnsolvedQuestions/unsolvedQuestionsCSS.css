@@ -3,6 +3,8 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
 .container {
@@ -11,10 +13,14 @@ body {
     padding: 20px;
     overflow-y: scroll;
     background-color: #f0f0f0; /* Background color for the main content */
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .right-container {
     margin: 60px;
+    margin-top: 95px;
     width: 20%; /* Adjust this width as needed */
     padding: 40px;
     height: 100%;
@@ -22,7 +28,85 @@ body {
     top: 0;
     right: 0;
     align-items: center;
-    border-radius: 10px 5px 10px 5px;
+    border-radius: 20px 10px 20px 10px;
     color: #0215e0;
     background-color: #ffb579; /* Background color for the right-side container */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    color: #1d1d1d; /* Default text color */
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label {
+    color: #0215e0; /* Change this to the desired text color */
+}
+
+.right-container label {
+    font-size: large;
+    color: #000000; /* Change this to the color you want for the label */
+}
+
+h1 {
+    text-align: center;
+    color: #0215e0;
+}
+
+/* question List Styles */
+.question-list {
+    list-style: none;
+    padding: 0;
+}
+
+.question-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 140px;
+    padding: 10px;
+    margin-bottom: 20px ;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.question-item:hover {
+    transform: scale(1.02);
+}
+
+.question-info {
+    flex: 1;
+}
+
+.question-title {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #0215e0;
+}
+
+.question-description {
+    font-size: 1.0rem;
+    color: #646464;
+}
+
+.question-solve-btn {
+    font-size: 1.0rem;
+    font-weight: bold;
+    background-color: #ffa500;
+    color: #000000;
+    border: none;
+    position: relative;
+    top: -95px;
+    left: 660px;
+    padding: 16px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.question-solve-btn:hover {
+    background-color: #0e1576;
+    color: #ffffff;
 }
