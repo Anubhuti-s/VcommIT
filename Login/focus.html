@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="focus_style.css">
+    <script src="focus_js.js"></script>
+    <title>FOCUS_ROOM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <div class="top-container">
+        <div class="left-align">
+            <div class="logo-circle">
+                <img src="WhatsApp Image 2023-09-22 at 12.26.57.jpg"  >
+            </div>
+            <input type="text" class="search-bar" placeholder="Search...">
+        </div>
+        <div class="right-align">
+            <a href="dashboard_html.html" id="navbar-links"><button class="home-button">Home</button></a>
+            <a href="about.html" id="navbar-links"><button class="about-button">About Us</button></a>
+            <!-- <button class="profile-button">Profile</button> -->
+            <!-- Profile Dropdown -->
+            <div class="profile-dropdown">
+                <button class="profile-button" onclick="toggleProfileDropdown()">Profile</button>
+                <div class="profile-dropdown-content" id="profile-dropdown-content">
+                    <!-- Include the profile code here -->
+                    <!-- For example: -->
+                    <div class="profile template1">
+                        <h1 class="profile-heading">Profile</h1>
+                        <img src="WhatsApp Image 2023-09-22 at 18.34.00.jpg" alt="Profile Picture" id="profile-pic" onclick="expandProfile()">
+                        <div class="info">
+                            <p class="info-title">Name:</p>
+                            <p id="name">John</p>
+                            <p class="info-title">Batch:</p>
+                            <p id="batch">2025</p>
+                            <p class="info-title">Branch:</p>
+                            <p id="branch">Computer Science with specialization in AI and ML</p>
+                        </div>
+                        <!-- GitHub and LinkedIn buttons with impressive styles and spacing -->
+                        <div class="social-container">
+                            <a href="https://www.linkedin.com/in/johndoe" target="_blank">
+                                <img src="https://static-00.iconduck.com/assets.00/linkedin-icon-2048x2048-ya5g47j2.png" alt="LinkedIn Logo">
+                            </a>
+                            <a href="https://github.com/johndoe" target="_blank">
+                                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+                            </a>
+                        </div>
+                        <div class="projects">
+                            <button class="projects-btn" onclick="showMyProjects()"><a href="savedProjects.html" id="signout-link">My Projects</a></button>
+                        </div>
+                        <button class="signout-btn" onclick="signout()"><a href="index_login.html" id="signout-link">Sign Out</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mainBody">
+        <!-- Sidebar Starts -->
+        <div class="sidebar">
+            <div class="sidebar__categories">
+                <h3><b>SAVED PROJECTS</b></h3>
+                <br>
+                <div class="sidebar__category">
+                    <span>Inventory Management System</span>
+                </div>
+                <div class="sidebar__category">
+                    <span>Real-time Data Analytics Dashboard</span>
+                </div>
+                <div class="sidebar__category">
+                    <span>Traffic Management System</span>
+                </div>
+                <!-- Add more sidebar categories as needed -->
+            </div>
+        </div>
+        <!-- Sidebar Ends -->
+        <div class="focus">
+
+            <h3 style="color:#0215e0;">FOCUS ROOM</h3>
+            <br>
+            <b id="projectName">PROJECT NUMBER</b>
+            <br>
+            <br>
+            <div class="box-project" id="projectDetails">
+                <!-- Project details content will be updated dynamically -->
+            </div>
+            <br>
+            <br>
+            <div class="box-project" id="txt"></div>
+            <div class="box">
+                No. of people active in focus room : 100
+            </div>
+            <div class="stopwatch">
+                <h1 id="clock">00:00:00</h1>
+                <button id="startStop">Start</button>
+                <button id="reset">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the profile dropdown
+        function toggleProfileDropdown() {
+            var dropdownContent = document.getElementById("profile-dropdown-content");
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

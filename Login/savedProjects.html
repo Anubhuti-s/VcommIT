@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Projects</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Basic styling */
+body {
+    background-color: #f0f0f0; /* Light gray background */
+    font-size: 16px; /* Slightly larger font size */
+    /* overflow: hidden; */
+}
+
+/* Style for the top navigation bar */
+.top-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #0e1576;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 100;
+}
+.search-bar {
+    width: 540px;
+    margin-top: 0px;
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Increase height and shorten width */
+    border: none;
+    outline: none;
+    background-color: #f1f1f1; /* Light gray background */
+    margin-left: 2px;
+}
+
+.left-align {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    justify-content: space-between;
+    margin-right: 200px;
+}
+
+.right-align {
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 230px;
+}
+
+.home-button,
+.about-button,
+.profile-button {
+    background-color: #f1f1f1;
+    color: #0e1576;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: right;
+    font-weight: bold;
+}
+
+
+.home-button {
+    margin-right: 15px;
+}
+
+.about-button {
+    margin-right: 15px;
+}
+
+#navbar-links {
+    color: #0e1576;
+    text-decoration: none;
+}
+
+.logo-circle{
+    width: 50px;
+    height: 50px;
+    background-color: #f1f1f1; /* Placeholder for the logo circle */
+    border-radius: 50%;
+    margin-right: 170px;
+    margin-left: 20px;
+    overflow: hidden;
+
+}
+.logo-circle img{
+    height: 55px;
+    width: 70px;
+    /* object-fit: cover; */
+    /* margin-bottom: 50px;
+    margin-right: 40px; */
+    margin-right: 170px;
+    margin-left: -10px;
+    margin-top: -2px;
+    
+}
+.search-bar {
+    width: 540px;
+    margin-top: 0px;
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Increase height and shorten width */
+    border: none;
+    outline: none;
+    background-color: #f1f1f1; /* Light gray background */
+    margin-left: 2px;
+}
+/* .search-bar input[type="text"] {
+    border: none;
+    padding: 12px; Larger padding */
+    /* flex: 1;
+    outline: none;
+    font-size: 18px;  Larger font size 
+} */
+
+.search-bar button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px; /* Larger button */
+    cursor: pointer;
+}
+/* profile dropdown */
+@keyframes fade-in {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: 2px solid #007BFF;
+}
+
+.profile img:hover {
+    transform: scale(1.1);
+}
+
+.info {
+    text-align: center;
+    margin: 5px 0;
+    color: #000;
+}
+
+.info-title {
+    font-weight: bold;
+    color: #007BFF;
+}
+.projects {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.projects-btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.signout-btn {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: #dc3545;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+.profile-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 40px;
+    right: 0;
+    border: 2px solid #FFA500;
+}
+.social-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-container a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-container img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s ease;
+}
+
+.social-container img:hover {
+    transform: scale(1.2);
+}
+
+.profile {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: fade-in 0.5s ease;
+}
+
+#signout-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0215e0;
+            padding-top: 0.01%;
+            margin-bottom: 30px;
+        }
+
+        /* Project List Styles */
+        .project-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            display: flex;
+            height: 130px;
+            width:inherit;
+            margin-bottom: 20px;
+            margin-left: -60px;
+            margin-right: -60px;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+        }
+
+        .project-item:hover {
+            transform: scale(1.02);
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-title {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #0215e0;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            color: #646464;
+        }
+
+        .project-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .project-unsave-btn,
+        .project-view-btn {
+            font-size: 1.0rem;
+            font-weight: bold;
+            border: none;
+            padding: 16px 16px;
+            margin-right: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ffa500; /* Change the background color to #ffa500 */
+            color: #000000;
+            transition: background-color 0.2s;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+        }
+
+        .project-unsave-btn:hover,
+        .project-view-btn:hover {
+            background-color: #0e1576;
+            color: #ffffff;
+        }
+
+        /* Description Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 20% auto;
+            padding: 20px;
+            border-radius: 5px;
+            width: 70%;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2); /* Add shadow here */
+        }
+
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Navigation Bar -->
+    <div class="top-container">
+        <div class="left-align">
+            <div class="logo-circle">
+                <img src="WhatsApp Image 2023-09-22 at 12.26.57.jpg"  >
+            </div>
+            <input type="text" class="search-bar" placeholder="Search...">
+        </div>
+        <div class="right-align">
+            <a href="dashboard_html.html" id="navbar-links"><button class="home-button">Home</button></a>
+            <a href="about.html" id="navbar-links"><button class="about-button">About Us</button></a>
+            <!-- <button class="profile-button">Profile</button> -->
+            <!-- Profile Dropdown -->
+            <div class="profile-dropdown">
+                <button class="profile-button" onclick="toggleProfileDropdown()">Profile</button>
+                <div class="profile-dropdown-content" id="profile-dropdown-content">
+                    <!-- Include the profile code here -->
+                    <!-- For example: -->
+                    <div class="profile template1">
+                        <h1 class="profile-heading">Profile</h1>
+                        <img src="WhatsApp Image 2023-09-22 at 18.34.00.jpg" alt="Profile Picture" id="profile-pic" onclick="expandProfile()">
+                        <div class="info">
+                            <p class="info-title">Name:</p>
+                            <p id="name">John</p>
+                            <p class="info-title">Batch:</p>
+                            <p id="batch">2025</p>
+                            <p class="info-title">Branch:</p>
+                            <p id="branch">Computer Science with specialization in AI and ML</p>
+                        </div>
+                        <!-- GitHub and LinkedIn buttons with impressive styles and spacing -->
+                        <div class="social-container">
+                            <a href="https://www.linkedin.com/in/johndoe" target="_blank">
+                                <img src="https://static-00.iconduck.com/assets.00/linkedin-icon-2048x2048-ya5g47j2.png" alt="LinkedIn Logo">
+                            </a>
+                            <a href="https://github.com/johndoe" target="_blank">
+                                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+                            </a>
+                        </div>
+                        <div class="projects">
+                            <button class="projects-btn" onclick="showMyProjects()"><a href="savedProjects.html" id="signout-link">My Projects</a></button>
+                        </div>
+                        <button class="signout-btn" onclick="signout()"><a href="index_login.html" id="signout-link">Sign Out</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </div>
+    <br><br><br>
+
+    <div class="container">
+        <br><br><br>
+        <h1>Saved Projects</h1>
+        <ul class="project-list" id="projectList">
+            <!-- Project Items Will Be Added Here -->
+        </ul>
+    </div>
+
+    <!-- Description Modal -->
+    <div id="descriptionModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <!-- JavaScript for Dynamic Project Addition, Removal, and Description Modal -->
+    <script>
+      
+ 
+ // Function to toggle the profile dropdown
+ function toggleProfileDropdown() {
+     var dropdownContent = document.getElementById("profile-dropdown-content");
+     if (dropdownContent.style.display === "block") {
+         dropdownContent.style.display = "none";
+     } else {
+         dropdownContent.style.display = "block";
+     }
+ }
+
+        const projectList = document.getElementById("projectList");
+        const descriptionModal = document.getElementById("descriptionModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
+
+        // Function to add a project to the list
+        function savedproject(title, description, projectUrL) {
+            const projectItem = document.createElement("li");
+            projectItem.className = "project-item";
+            projectItem.innerHTML = `
+                <div class="project-info">
+                    <p class="project-title">${title}</p>
+                    <p class="project-description">${description}</p>
+                </div>
+                <div class="project-buttons">
+                    <button class="project-view-btn" onclick="openModal('${title}', '${description}')">View</button>
+                    <button class="project-unsave-btn" onclick="removeProject(this)">Unsave</button>
+                </div>`;
+            projectList.appendChild(projectItem);
+        }
+
+        function openModal(title, description) {
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            descriptionModal.style.display = "block";
+        }
+
+        function closeModal() {
+            descriptionModal.style.display = "none";
+        }
+
+        function removeProject(button) {
+            const projectItem = button.parentElement.parentElement;
+            projectList.removeChild(projectItem);
+        }
+
+        // Example usage to add a project
+        savedproject("Inventory Management System", "A web-based or desktop application to manage inventory, track stock levels, and<br> generate reports for businesses", "project1.html");
+        savedproject("Real-time Data Analytics Dashboard", "A dashboard that can process and visualize real-time data streams, making it<br> suitable  for monitoring network traffic, social media trends, or IoT sensor data", "project2.html");
+        savedproject("Virtual Reality (VR) Game", "An immersive VR game that utilizes 3D graphics, interactive environments, and<br> motioncontrollers for an engaging gaming experience", "project3.html");
+        savedproject("Traffic Management System", "A system that uses sensors and real-time data to optimize traffic flow, reduce<br> congestion, and improve transportation efficiency", "project4.html");
+        savedproject("Natural Language Processing for Sentiment Analysis", "A sentiment analysis tool that analyzes text data from social media, reviews, or<br> newsarticles to determine sentiment and trends", "project5.html");
+        savedproject("Mobile App for Task Management", "A mobile app for task and project management, including features like task creation,<br> deadlines, notifications, and team collaboration", "project6.html");
+        // Add more projects as needed, with their project URLs
+    </script>
+</body>
+
+</html>

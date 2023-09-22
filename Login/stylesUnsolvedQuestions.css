@@ -1,0 +1,397 @@
+/* styles.css */
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+* Reset default margin and padding */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Style for the top navigation bar */
+.top-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #0e1576;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 100;
+}
+
+.left-align {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    justify-content: space-between;
+    margin-right: 200px;
+}
+
+.right-align {
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 230px;
+}
+
+.logo-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #f1f1f1; /* Placeholder for the logo circle */
+    border-radius: 50%;
+    margin-right: 170px;
+    margin-left: 20px;
+}
+
+
+/* .search-bar {
+    background-color: #f1f1f1; /* Light gray background 
+    flex:0.9;
+    border-radius: 30px; 
+    margin: 10px 5px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+
+.search-bar input[type="text"] {
+    border: none;
+    padding: 5px;
+    flex:1;
+    outline: none;
+} */
+
+.search-bar {
+    width: 540px;
+    margin-top: 0px;
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Increase height and shorten width */
+    border: none;
+    outline: none;
+    background-color: #f1f1f1; /* Light gray background */
+    margin-left: 2px;
+}
+
+/* .search-bar button {
+    background-color: #ace8f3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+} */
+
+.home-button,
+.about-button,
+.profile-button {
+    background-color: #f1f1f1;
+    color: #0e1576;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: right;
+    font-weight: bold;
+}
+
+.home-button {
+    margin-right: 15px; /* Add margin to separate from other buttons */
+}
+.about-button {
+    margin-right: 15px;
+}
+#navbar-links {
+    color: #0e1576;
+    text-decoration: none;
+}
+
+.logo-circle{
+    width: 50px;
+    height: 50px;
+    background-color: #f1f1f1; /* Placeholder for the logo circle */
+    border-radius: 50%;
+    margin-right: 170px;
+    margin-left: 20px;
+    overflow: hidden;
+
+}
+.logo-circle img{
+    height: 55px;
+    width: 70px;
+    /* object-fit: cover; */
+    /* margin-bottom: 50px;
+    margin-right: 40px; */
+    margin-right: 170px;
+    margin-left: -10px;
+    margin-top: -2px;
+    
+}
+.search-bar {
+    width: 540px;
+    margin-top: 0px;
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Increase height and shorten width */
+    border: none;
+    outline: none;
+    background-color: #f1f1f1; /* Light gray background */
+    margin-left: 2px;
+}
+/* .search-bar input[type="text"] {
+    border: none;
+    padding: 12px; Larger padding */
+    /* flex: 1;
+    outline: none;
+    font-size: 18px;  Larger font size 
+} */
+
+.search-bar button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px; /* Larger button */
+    cursor: pointer;
+}
+/* profile dropdown */
+@keyframes fade-in {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: 2px solid #007BFF;
+}
+
+.profile img:hover {
+    transform: scale(1.1);
+}
+
+.info {
+    text-align: center;
+    margin: 5px 0;
+    color: #000;
+}
+
+.info-title {
+    font-weight: bold;
+    color: #007BFF;
+}
+.projects {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.projects-btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.signout-btn {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: #dc3545;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+.profile-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 40px;
+    right: 0;
+    border: 2px solid #FFA500;
+}
+.social-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-container a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-container img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s ease;
+}
+
+.social-container img:hover {
+    transform: scale(1.2);
+}
+
+.profile {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: fade-in 0.5s ease;
+}
+
+#signout-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    width: 75%;
+    height: 100vh;
+    padding: 10px;
+    overflow-y: scroll;
+    background-color: #f0f0f0; /* Background color for the main content */
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.right-container {
+    margin: 60px;
+    margin-top: 120px;
+    width: 25%; /* Adjust this width as needed */
+    padding: 40px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    align-items: center;
+    border-radius: 20px 10px 20px 10px;
+    color: #0215e0;
+    background-color: #ffb579; /* Background color for the right-side container */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    color: #1d1d1d; /* Default text color */
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label {
+    color: #0215e0; /* Change this to the desired text color */
+}
+
+.right-container label {
+    font-size: large;
+    color: #000000; /* Change this to the color you want for the label */
+}
+
+h1 {
+    text-align: center;
+    color: #0215e0;
+    padding-top: 50px;
+    margin-bottom: 20px;
+}
+
+/* question List Styles */
+.question-list {
+    list-style: none;
+    padding: 0;
+}
+
+.question-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 140px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.question-item:hover {
+    transform: scale(1.02);
+}
+
+.question-info {
+    flex: 1;
+}
+
+.question-title {
+    font-weight: bold;
+    font-size: 1.4rem;
+    position: relative; 
+    top: 5px;
+    color: #0215e0;
+}
+
+.question-description {
+    font-size: 1.0rem;
+    position: relative; 
+    top: 5px;
+    color: #646464;
+}
+
+.question-solve-btn {
+    font-size: 1.0rem;
+    font-weight: bold;
+    background-color: #ffa500;
+    color: #000000;
+    border: none;
+    position: relative;
+    top: -70px;
+    left: 660px;
+    padding: 16px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.question-solve-btn:hover {
+    background-color: #0e1576;
+    color: #ffffff;
+}

@@ -1,0 +1,345 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden; /* Hide scrollbars */
+}
+
+/* Style for the top navigation bar */
+.top-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #0e1576;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 100;
+}
+
+.left-align {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    justify-content: space-between;
+    margin-right: 200px;
+}
+
+.right-align {
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 230px;
+}
+
+.logo-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #f1f1f1; /* Placeholder for the logo circle */
+    border-radius: 50%;
+    margin-right: 170px;
+    margin-left: 20px;
+    overflow: hidden;
+
+}
+
+.logo-circle img{
+    height: 55px;
+    width: 70px;
+    /* object-fit: cover; */
+    /* margin-bottom: 50px;
+    margin-right: 40px; */
+    margin-right: 170px;
+    margin-left: -10px;
+    margin-top: -2px;
+    
+}
+
+.search-bar {
+    width: 540px;
+    margin-top: 0px;
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Increase height and shorten width */
+    border: none;
+    outline: none;
+    background-color: #f1f1f1; /* Light gray background */
+    margin-left: 2px;
+}
+
+.home-button,
+.about-button,
+.profile-button {
+    background-color: #f1f1f1;
+    color: #0e1576;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: right;
+    font-weight: bold;
+}
+
+.home-button {
+    margin-right: 15px;
+}
+
+.about-button {
+    margin-right: 15px;
+}
+
+#navbar-links {
+    color: #0e1576;
+    text-decoration: none;
+}
+
+/* profile dropdown */
+@keyframes fade-in {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: 2px solid #007BFF;
+}
+
+.profile img:hover {
+    transform: scale(1.1);
+}
+
+.info {
+    text-align: center;
+    margin: 5px 0;
+    color: #000;
+}
+
+.info-title {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.projects {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.projects-btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.signout-btn {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: #dc3545;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 40px;
+    right: 0;
+    border: 2px solid #FFA500;
+}
+
+.social-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-container a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-container img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s ease;
+}
+
+.social-container img:hover {
+    transform: scale(1.2);
+}
+
+.profile {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: fade-in 0.5s ease;
+}
+
+#signout-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Container for the columns */
+.container {
+    display: flex;
+    margin-top: 60px;  /*Adjust as needed */
+    padding: 20px;
+    border-radius: 20px; /* Rounded corners */
+    background-color: #f1f1f1; /* Light gray background */
+    height: 92vh;
+}
+
+/* Style for the left and right columns */
+.column {
+    flex: 1;
+    min-width: 200px;
+    background-color: #e1e1e1; /* Light blue background */
+    padding: 20px;
+    position: sticky;
+    top: 60px; /* Keep it below the navbar */
+    border-radius: 20px; /* Rounded corners */
+}
+
+/* Style for the middle container */
+.middle-container {
+    flex: 2;
+    margin-left: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /*max-height: 400px;  Adjust to your preferred height */
+}
+
+/* Style for buttons in the left and right columns */
+.column button {
+    display: block;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 50px;
+    text-align: center;
+    border: none;
+    background-color: #ffb579; /* Light blue color */
+    cursor: pointer;
+    transition: transform 0.2s;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.column button:hover {
+    background-color: #0e1576; /* Dark blue color on hover */
+    color: #fff;
+    transform: scale(1.04);
+}
+
+/* Style for posts in the middle container */
+.post {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.post-header {
+    display: flex;
+    margin-bottom: 6px;
+    align-items: center;
+}
+
+/* Style for circular profile pictures in post headers */
+.profile-pic {
+    width: 50px; /* Adjust the width to fit inside the circular profile circle */
+    height: 50px; /* Adjust the height to fit inside the circular profile circle */
+    border-radius: 50%; /* Create a circular profile image */
+    object-fit: cover; /* Ensure the image fills the circle while maintaining aspect ratio */
+    margin-right: 10px; /* Add some spacing between the profile image and the name */
+}
+
+/* Style for circular buttons */
+.circle-button {
+    width: 40px; /* Set the desired width */
+    height: 40px; /* Set the desired height */
+    border-radius: 50%; /* Make it circular */
+    background-color: #0077B5; /* LinkedIn Blue */
+    color: #fff; /* Text color */
+    border: none; /* Remove border */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px; /* Adjust the font size */
+    cursor: pointer;
+    margin-right: 5px; /* Add some spacing between buttons */
+}
+
+.post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+    font-size: large;
+}
+
+.post-actions {
+    display: flex;
+    margin-top: 10px;
+}
+
+.post-actions button {
+    margin-right: 10px;
+    background-color: #ffa500;
+    color: black;
+    transition: transform 0.2s;
+}
+
+.post-actions :hover {
+    background-color: #0e1576;
+    color: white;
+    transform: scale(1.09);
+}
+
+#column-links {
+    color: black;
+    text-decoration: none;
+}
+

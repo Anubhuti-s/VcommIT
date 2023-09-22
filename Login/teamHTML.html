@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams Chat</title>
+    <link rel="stylesheet" href="teamstyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- FontAwesome CDN link -->
+    <style>
+        /* Real Chat Interface Styles */
+        .team-chat {
+            background-color: #ffb62e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Increased shadow */
+            width: 500px; /* Adjust width as needed */
+        }
+
+        .chat-header h2 {
+            margin: 0;
+            color: #fff; /* Text color */
+        }
+
+        .chat-messages {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px; /* Add some padding to messages */
+        }
+
+        .message {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .message img {
+            width: 40px; /* Avatar size */
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 12px; /* Increased margin */
+        }
+
+        .message p {
+            font-size: 16px; /* Message font size */
+            padding: 10px; /* Add padding to messages */
+            background-color: #eaeaee; /* Message background color */
+            border-radius: 10px; /* Message border radius */
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); /* Message box shadow */
+        }
+
+        .chat-input {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .chat-input input[type="text"] {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            outline: none;
+            font-size: 18px;
+        }
+
+        .chat-input button {
+            background-color: #7ca8fe ;
+            color: #000000;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 24px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<!-- Your existing HTML content here... -->
+<!-- Top Navigation Bar -->
+<div class="top-container">
+    <div class="left-align">
+        <div class="logo-circle">
+            <img src="WhatsApp Image 2023-09-22 at 12.26.57.jpg"  >
+        </div>
+        <input type="text" class="search-bar" placeholder="Search...">
+    </div>
+    <div class="right-align">
+        <a href="dashboard_html.html" id="navbar-links"><button class="home-button">Home</button></a>
+        <a href="about.html" id="navbar-links"><button class="about-button">About Us</button></a>
+        <!-- <button class="profile-button">Profile</button> -->
+        <!-- Profile Dropdown -->
+        <div class="profile-dropdown">
+            <button class="profile-button" onclick="toggleProfileDropdown()">Profile</button>
+            <div class="profile-dropdown-content" id="profile-dropdown-content">
+                <!-- Include the profile code here -->
+                <!-- For example: -->
+                <div class="profile template1">
+                    <h1 class="profile-heading">Profile</h1>
+                    <img src="WhatsApp Image 2023-09-22 at 18.34.00.jpg" alt="Profile Picture" id="profile-pic" onclick="expandProfile()">
+                    <div class="info">
+                        <p class="info-title">Name:</p>
+                        <p id="name">John</p>
+                        <p class="info-title">Batch:</p>
+                        <p id="batch">2025</p>
+                        <p class="info-title">Branch:</p>
+                        <p id="branch">Computer Science with specialization in AI and ML</p>
+                    </div>
+                    <!-- GitHub and LinkedIn buttons with impressive styles and spacing -->
+                    <div class="social-container">
+                        <a href="https://www.linkedin.com/in/johndoe" target="_blank">
+                            <img src="https://static-00.iconduck.com/assets.00/linkedin-icon-2048x2048-ya5g47j2.png" alt="LinkedIn Logo">
+                        </a>
+                        <a href="https://github.com/johndoe" target="_blank">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+                        </a>
+                    </div>
+                    <div class="projects">
+                        <button class="projects-btn" onclick="showMyProjects()"><a href="savedProjects.html" id="signout-link">My Projects</a></button>
+                    </div>
+                    <button class="signout-btn" onclick="signout()"><a href="index_login.html" id="signout-link">Sign Out</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+</div>
+
+<br><br><br><br>
+<!-- Horizontal Container for Teams, Team Chat, and Team Details -->
+<div class="horizontal-container">
+    <!-- Side Panel for Listing Teams (Left Side) -->
+    <div class="side-panel">
+        <h2>Teams</h2>
+        <ul class="team-list">
+            <li><a href="#">Team 1</a></li>
+            <li><a href="#">Team 2</a></li>
+            <li><a href="#">Team 3</a></li>
+            <li><a href="#">Team 4</a></li>
+            <li><a href="#">Team 5</a></li>
+            <!-- Add more teams here -->
+        </ul>
+    </div>
+
+    <!-- Team Chat (Middle) -->
+    <div class="team-chat">
+        <div class="chat-header">
+            <h2>Team Chat</h2>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <!-- Messages will be displayed here -->
+        </div>
+        <!-- Chat Input Section -->
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <button id="send-button"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Team Details and Documents Panel (Right Side) -->
+    <div class="team-details">
+        <h2>Team Details</h2>
+        <!-- Add team details, data, and documents here -->
+        <div class="team-info">
+            <img src="team_profile.png" alt="Team Avatar">
+            <p>Team 1</p>
+        </div>
+        <div class="documents">
+            <h3>Documents</h3>
+            <ul>
+                <li><a href="#">Document 1</a></li>
+                <li><a href="#">Document 2</a></li>
+                <!-- Add more documents here -->
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+ 
+    // Function to toggle the profile dropdown
+    function toggleProfileDropdown() {
+        var dropdownContent = document.getElementById("profile-dropdown-content");
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            dropdownContent.style.display = "block";
+        }
+    }
+
+// JavaScript to handle chat functionality
+
+// Function to add a new message to the chat
+function addMessage(content, type) {
+const chatMessages = document.getElementById('chat-messages');
+const message = document.createElement('div');
+message.classList.add('message', type);
+message.innerHTML = `<p>${content}</p>`;
+chatMessages.appendChild(message);
+
+// Scroll to the bottom to show the latest message
+chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Function to send a message when the send button is clicked
+function sendMessage() {
+const messageInput = document.getElementById('message-input');
+const message = messageInput.value.trim();
+if (message !== '') {
+    addMessage(message, 'outgoing');
+    messageInput.value = '';
+}
+}
+
+// Event listener for send button click
+document.getElementById('send-button').addEventListener('click', sendMessage);
+
+// Event listener for Enter key press in the input field
+document.getElementById('message-input').addEventListener('keydown', function (e) {
+if (e.key === 'Enter') {
+    sendMessage();
+}
+});
+
+// Simulate receiving a message (you can replace this with actual messages)
+addMessage('Hello there!', 'incoming');
+addMessage('Hi! How can I help you?', 'outgoing');
+function addMessage(content, type) {
+const chatMessages = document.getElementById('chat-messages');
+const message = document.createElement('div');
+message.classList.add('message', type);
+message.innerHTML = `<p>${content}</p><span class="message-timestamp">${new Date().toLocaleTimeString()}</span>`;
+chatMessages.appendChild(message);
+
+// Scroll to the bottom to show the latest message
+chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+</script>
+

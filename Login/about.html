@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles_about.css">
+    <link rel="stylesheet" href="https://cdnjs.com/libraries/font-awesome">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <div class="top-container">
+        <div class="left-align">
+            <div class="logo-circle">
+                <img src="WhatsApp Image 2023-09-22 at 12.26.57.jpg"  >
+            </div>
+            <input type="text" class="search-bar" placeholder="Search...">
+        </div>
+        <div class="right-align">
+            <a href="dashboard_html.html" id="navbar-links"><button class="home-button">Home</button></a>
+            <a href="about.html" id="navbar-links"><button class="about-button">About Us</button></a>
+            <!-- <button class="profile-button">Profile</button> -->
+            <!-- Profile Dropdown -->
+            <div class="profile-dropdown">
+                <button class="profile-button" onclick="toggleProfileDropdown()">Profile</button>
+                <div class="profile-dropdown-content" id="profile-dropdown-content">
+                    <!-- Include the profile code here -->
+                    <!-- For example: -->
+                    <div class="profile template1">
+                        <h1 class="profile-heading">Profile</h1>
+                        <img src="WhatsApp Image 2023-09-22 at 18.34.00.jpg" alt="Profile Picture" id="profile-pic" onclick="expandProfile()">
+                        <div class="info">
+                            <p class="info-title">Name:</p>
+                            <p id="name">John</p>
+                            <p class="info-title">Batch:</p>
+                            <p id="batch">2025</p>
+                            <p class="info-title">Branch:</p>
+                            <p id="branch">Computer Science with specialization in AI and ML</p>
+                        </div>
+                        <!-- GitHub and LinkedIn buttons with impressive styles and spacing -->
+                        <div class="social-container">
+                            <a href="https://www.linkedin.com/in/johndoe" target="_blank">
+                                <img src="https://static-00.iconduck.com/assets.00/linkedin-icon-2048x2048-ya5g47j2.png" alt="LinkedIn Logo">
+                            </a>
+                            <a href="https://github.com/johndoe" target="_blank">
+                                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+                            </a>
+                        </div>
+                        <div class="projects">
+                            <button class="projects-btn" onclick="showMyProjects()"><a href="savedProjects.html" id="signout-link">My Projects</a></button>
+                        </div>
+                        <button class="signout-btn" onclick="signout()"><a href="index_login.html" id="signout-link">Sign Out</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+
+        <div class="background-container">
+            <div class="bg-1"></div>
+            <div class="bg-2"></div>
+    
+        </div>
+        <div class="about-container">
+            
+            <div class="image-container">
+                <img src="logo.jpg" alt="">
+                
+            </div>
+
+            <div class="text-container">
+                <h1><p style="color:#0e1576">VcommIT</p></h1>
+                <p>At VcommIT, we foster an environment where students come together not just to study, but to embark on a journey of exploration, innovation, and personal growth. It's not just a place; it's a vibrant community where students unite to share their creations, spark creative fires, and ignite their potential.</p>
+                <a href="about2.html">Read More</a>
+            </div>
+            
+        </div>
+
+        
+        
+    </div>
+    
+    <script>
+        // Function to toggle the profile dropdown
+        function toggleProfileDropdown() {
+            var dropdownContent = document.getElementById("profile-dropdown-content");
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

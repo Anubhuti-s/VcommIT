@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesUnsolvedQuestions.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsolved Questions</title>
+</head>
+
+<body>
+       <!-- Top Navigation Bar -->
+   <div class="top-container">
+    <div class="left-align">
+        <div class="logo-circle">
+            <img src="WhatsApp Image 2023-09-22 at 12.26.57.jpg"  >
+        </div>
+        <input type="text" class="search-bar" placeholder="Search...">
+    </div>
+    <div class="right-align">
+        <a href="dashboard_html.html" id="navbar-links"><button class="home-button">Home</button></a>
+        <a href="about.html" id="navbar-links"><button class="about-button">About Us</button></a>
+        <!-- <button class="profile-button">Profile</button> -->
+        <!-- Profile Dropdown -->
+        <div class="profile-dropdown">
+            <button class="profile-button" onclick="toggleProfileDropdown()">Profile</button>
+            <div class="profile-dropdown-content" id="profile-dropdown-content">
+                <!-- Include the profile code here -->
+                <!-- For example: -->
+                <div class="profile template1">
+                    <h1 class="profile-heading">Profile</h1>
+                    <img src="WhatsApp Image 2023-09-22 at 18.34.00.jpg" alt="Profile Picture" id="profile-pic" onclick="expandProfile()">
+                    <div class="info">
+                        <p class="info-title">Name:</p>
+                        <p id="name">John</p>
+                        <p class="info-title">Batch:</p>
+                        <p id="batch">2025</p>
+                        <p class="info-title">Branch:</p>
+                        <p id="branch">Computer Science with specialization in AI and ML</p>
+                    </div>
+                    <!-- GitHub and LinkedIn buttons with impressive styles and spacing -->
+                    <div class="social-container">
+                        <a href="https://www.linkedin.com/in/johndoe" target="_blank">
+                            <img src="https://static-00.iconduck.com/assets.00/linkedin-icon-2048x2048-ya5g47j2.png" alt="LinkedIn Logo">
+                        </a>
+                        <a href="https://github.com/johndoe" target="_blank">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+                        </a>
+                    </div>
+                    <div class="projects">
+                        <button class="projects-btn" onclick="showMyProjects()"><a href="savedProjects.html" id="signout-link">My Projects</a></button>
+                    </div>
+                    <button class="signout-btn" onclick="signout()"><a href="index_login.html" id="signout-link">Sign Out</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+</div>
+
+<br><br><br><br>
+<br>
+    <div class="container" style="position: relative; top: 50px;">
+        <br><h1>Unsolved Questions</h1>
+        <!-- Added a wrapping div for the question list -->
+        <div id="questionContainer">
+            <ul class="question-list" id="questionList">
+                <!-- question Items Will Be Added Here -->
+            </ul>
+        </div>
+    </div>
+    <div class="right-container" style="position: relative; top: 50px;">
+        <!-- Your right-side container content goes here -->
+        <h2>Domains</h2><br>
+        <input type="checkbox" id="domain1" class="domain-checkbox"> <label for="domain1">Natural Language Processing(NLP)</label><br><br>
+        <input type="checkbox" id="domain2" class="domain-checkbox"> <label for="domain2">Data Structures And Algorithms</label><br><br>
+        <input type="checkbox" id="domain3" class="domain-checkbox"> <label for="domain3">Artificial Intelligence(AI) and Machine Learning(ML)</label><br><br>
+        <input type="checkbox" id="domain4" class="domain-checkbox"> <label for="domain4">Robotics</label><br><br>
+        <input type="checkbox" id="domain5" class="domain-checkbox"> <label for="domain5">Quantum Computing</label>
+    </div>
+
+    <!-- JavaScript for Dynamic question Addition and Filtering -->
+    <script>
+               // Function to toggle the profile dropdown
+               function toggleProfileDropdown() {
+            var dropdownContent = document.getElementById("profile-dropdown-content");
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        }
+        const questions = [
+        {
+            title: "Domain-Specific Languages (DSLs)",
+            description: "What Are the Design Principles Behind Domain-Specific Languages (DSLs),<br> and How Do They Impact Software Development?<br><br>Asked by Sanjana Singh",
+            postUrl: "",
+            keywords: ["domain1"]
+        },
+        {
+            title: "Quantum Computing",
+            description: "How Can Quantum Computing Influence High-Level Programming Languages?<br><br>Asked by Rahul Manto",
+            postUrl: "",
+            keywords: ["domain5"]
+        },
+        // Add more questions here
+        {
+            title: "Hybrid Data Structures",
+            description: "Can Hybrid Data Structures Optimize Memory Utilization and Processing Speed<br> in Big Data Applications?<br><br>Asked by Ojas Bahl",
+            postUrl: "",
+            keywords: ["domain2"]
+        },
+        {
+            title: "Fair and Explainable AI",
+            description: "What Are the Algorithmic Challenges in Fair and Explainable AI, and How<br> Can They Be Addressed?<br><br>Asked by Naman Jaiswal",
+            postUrl: "",
+            keywords: ["domain3"]
+        },
+        {
+            title: "Self-Supervised Learning Algorithms in AI",
+            description: "How Can Self-Supervised Learning Algorithms Enhance Representation<br> Learning in AI?<br><br>Asked by R A Gautham",
+            postUrl: "",
+            keywords: ["domain3"]
+        },
+        {
+            title: "Reinforcement Learning in Robotics",
+            description: "What Are the Emerging Trends in Reinforcement Learning for Robotics<br> Control and Navigation?<br><br>Asked by Manan Gupta",
+            postUrl: "",
+            keywords: ["domain4"]
+        },
+        {
+            title: "Swarm Robotics",
+            description: "How Can Swarm Robotics Be Leveraged for Disaster Response and Relief<br> Operations?<br><br>Asked by Thejhas Reddy",
+            postUrl: "",
+            keywords: ["domain4"]
+        },
+        {
+            title: "Soft Robotics",
+            description: "What Are the Challenges and Opportunities of Soft Robotics in Medical<br> Applications?<br><br>Asked by Ojas Bahl",
+            postUrl: "",
+            keywords: ["domain4"]
+        },
+        {
+            title: "Quantum Machine Learning Algorithms",
+            description: "How Can Quantum Machine Learning Algorithms Solve Real-World<br> Optimization Problems?<br><br>Asked by Roohi Ahmed",
+            postUrl: "",
+            keywords: ["domain5"]
+        },
+        {
+            title: "Quantum Cryptographic Applications",
+            description: "What Are the Quantum Algorithms for Cryptographic Applications, and How Do<br> They Impact Cybersecurity?<br><br>Asked by Sara Kaif",
+            postUrl: "",
+            keywords: ["domain5"]
+        
+        },
+        {
+            title: "Multimodal NLP Models",
+            description: "How Can Multimodal NLP Models Improve Human-Computer Interaction in Virtual and<br> Augmented Reality Environments?<br><br>Asked by Uma M Rajesh",
+            postUrl: "",
+            keywords: ["domain1"]
+        },
+        {
+            title: "Resource-Constrained Devices in AI",
+            description: "What Are the Challenges and Solutions for Implementing AI at the Edge in<br> Resource-Constrained Devices?<br><br>Asked by Sanjith G",
+            postUrl: "",
+            keywords: ["domain3"]
+        },
+        {
+            title: "Autonomous Vehicles in AI",
+            description: "How Can Explainable AI Techniques Be Applied to Improve the Transparency of<br> Autonomous Vehicles?<br><br>Asked by Kunal Rathi",
+            postUrl: "",
+            keywords: ["domain3"]
+        },
+        {
+            title: "Human-AI Collaboration",
+            description: "What Are the Emerging Trends in Human-AI Collaboration for Creative Tasks, Such as<br> Art and Music Production?<br><br>Asked by Aadit Singh",
+            postUrl: "",
+            keywords: ["domain3"]
+        }
+            // ... (Your question data remains unchanged)
+        ];
+
+        function addQuestionToDOM(title, description, postUrl) {
+            const questionList = document.getElementById("questionList");
+            const questionItem = document.createElement("li");
+            questionItem.className = "question-item";
+            questionItem.innerHTML = `
+            <src="${title}" onclick="navigateTopost('${postUrl}')">
+                <div class="question-info">
+                    <br><br><p class="question-title">${title}</p>
+                    <p class="question-description">${description}</p>
+                </div>
+                <button class="question-solve-btn">Solve</button>
+            `;
+            questionList.appendChild(questionItem);
+        }
+
+        // Function to clear the existing questions
+        function clearQuestions() {
+            const questionList = document.getElementById("questionList");
+            while (questionList.firstChild) {
+                questionList.removeChild(questionList.firstChild);
+            }
+        }
+
+        // Add questions to the DOM initially
+        questions.forEach(question => {
+            addQuestionToDOM(question.title, question.description, question.postUrl);
+        });
+
+        // Function to filter questions based on selected checkboxes
+        function filterQuestions() {
+            clearQuestions(); // Clear existing questions
+
+            const checkboxes = document.querySelectorAll('.domain-checkbox');
+            const selectedDomains = Array.from(checkboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.id);
+
+            const questionList = document.getElementById("questionList");
+
+            questions.forEach(question => {
+                const keywords = question.keywords || [];
+
+                if (selectedDomains.length === 0 || selectedDomains.some(domain => keywords.includes(domain))) {
+                    addQuestionToDOM(question.title, question.description, question.postUrl);
+                }
+            });
+        }
+
+        // Add an event listener to checkboxes to trigger filtering
+        const checkboxes = document.querySelectorAll('.domain-checkbox');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterQuestions);
+        });
+
+    </script>
+</body>
+</html>
+
+
+
+        <!-- // Example usage to add a question
+        addquestion("Domain-Specific Languages (DSLs)", "What Are the Design Principles Behind Domain-Specific Languages (DSLs),<br> and How Do They Impact Software Development?<br><br>Asked by Sanjana Singh", "");
+        addquestion("Quantum Computing", "How Can Quantum Computing Influence High-Level Programming Languages?<br><br>Asked by Rahul Manto", "");
+        addquestion("Hybrid Data Structures", "Can Hybrid Data Structures Optimize Memory Utilization and Processing Speed<br> in Big Data Applications?<br><br>Asked by Ojas Bahl", "");
+        addquestion("Fair and Explainable AI", "What Are the Algorithmic Challenges in Fair and Explainable AI, and How<br> Can They Be Addressed?<br><br>Asked by Naman Jaiswal", "");
+        addquestion("Self-Supervised Learning Algorithms in AI", "How Can Self-Supervised Learning Algorithms Enhance Representation<br> Learning in AI?<br><br>Asked by R A Gautham", "");
+        addquestion("Reinforcement Learning in Robotics", "What Are the Emerging Trends in Reinforcement Learning for Robotics<br> Control and Navigation?<br><br>Asked by Manan Gupta", "");
+        addquestion("Swarm Robotics", "How Can Swarm Robotics Be Leveraged for Disaster Response and Relief<br> Operations?<br><br>Asked by Thejhas Reddy", "");
+        addquestion("Soft Robotics", "What Are the Challenges and Opportunities of Soft Robotics in Medical<br> Applications?<br><br>Asked by Ojas Bahl", "");
+        addquestion("Quantum Machine Learning Algorithms", "How Can Quantum Machine Learning Algorithms Solve Real-World<br> Optimization Problems?<br><br>Asked by Roohi Ahmed", "");
+        addquestion("Quantum Cryptographic Applications", "What Are the Quantum Algorithms for Cryptographic Applications, and How Do<br> They Impact Cybersecurity?<br><br>Asked by Sara Kaif", "");
+        addquestion("Multimodal NLP Models", "How Can Multimodal NLP Models Improve Human-Computer Interaction in Virtual and<br> Augmented Reality Environments?<br><br>Asked by Uma M Rajesh", "");
+        addquestion("Resource-Constrained Devices in AI", "What Are the Challenges and Solutions for Implementing AI at the Edge in<br> Resource-Constrained Devices?<br><br>Asked by Sanjith G", "");
+        addquestion("Autonomous Vehicles in AI", "How Can Explainable AI Techniques Be Applied to Improve the Transparency of<br> Autonomous Vehicles?<br><br>Asked by Kunal Rathi", "");
+        addquestion("Human-AI Collaboration", "What Are the Emerging Trends in Human-AI Collaboration for Creative Tasks, Such as<br> Art and Music Production?<br><br>Asked by Aadit Singh", ""); -->
+<!--   
+        {
+            title: "Domain-Specific Languages (DSLs)",
+            description: "What Are the Design Principles Behind Domain-Specific Languages (DSLs),<br> and How Do They Impact Software Development?<br><br>Asked by Sanjana Singh",
+            postUrl: "",
+            keywords: ["domain1"]
+        },
+        {
+            title: "Quantum Computing",
+            description: "How Can Quantum Computing Influence High-Level Programming Languages?<br><br>Asked by Rahul Manto",
+            postUrl: "",
+            keywords: ["domain5"]
+        },
+        // Add more questions here
+        {
+            title: "Hybrid Data Structures",
+            description: "Can Hybrid Data Structures Optimize Memory Utilization and Processing Speed<br> in Big Data Applications?<br><br>Asked by Ojas Bahl",
+            postUrl: "",
+            keywords: ["domain2"]
+        },
+        {
+            title: "Fair and Explainable AI",
+            description: "What Are the Algorithmic Challenges in Fair and Explainable AI, and How<br> Can They Be Addressed?<br><br>Asked by Naman Jaiswal",
+            postUrl: "",
+            keywords: ["domain3"]
+        },
+        {
+            title: "Self-Supervised Learning Algorithms in AI",
+            description: "How Can Self-Supervised Learning Algorithms Enhance Representation<br> Learning in AI?<br><br>Asked by R A Gautham",
+            postUrl: "",
+            keywords: ["domain3"]
+        },
+        {
+            title: "Reinforcement Learning in Robotics",
+            description: "What Are the Emerging Trends in Reinforcement Learning for Robotics<br> Control and Navigation?<br><br>Asked by Manan Gupta",
+            postUrl: "",
+            keywords: ["domain4"]
+        },
+        {
+            title: "Swarm Robotics",
+            description: "How Can Swarm Robotics Be Leveraged for Disaster Response and Relief<br> Operations?<br><br>Asked by Thejhas Reddy",
+            postUrl: "",
+            keywords: ["domain4"]
+        },
+        {
+            title: "Soft Robotics",
+            description: "What Are the Challenges and Opportunities of Soft Robotics in Medical<br> Applications?<br><br>Asked by Ojas Bahl",
+            postUrl: "",
+            keywords: ["domain4"]
+        },
+        {
+            title: "Quantum Machine Learning Algorithms",
+            description: "How Can Quantum Machine Learning Algorithms Solve Real-World<br> Optimization Problems?<br><br>Asked by Roohi Ahmed",
+            postUrl: "",
+            keywords: ["domain5"]
+        },
+        {
+            title: "Quantum Cryptographic Applications",
+            description: "What Are the Quantum Algorithms for Cryptographic Applications, and How Do<br> They Impact Cybersecurity?<br><br>Asked by Sara Kaif",
+            postUrl: "",
+            keywords: ["domain5"]
+        
+        },
+        {
+            title: "Multimodal NLP Models",
+            description: "How Can Multimodal NLP Models Improve Human-Computer Interaction in Virtual and<br> Augmented Reality Environments?<br><br>Asked by Uma M Rajesh",
+            postUrl: "",
+            keywords: ["domain1"]
+        },
+        {
+            title: "Resource-Constrained Devices in AI",
+            description: "What Are the Challenges and Solutions for Implementing AI at the Edge in<br> Resource-Constrained Devices?<br><br>Asked by Sanjith G",
+            postUrl: "",
+            keywords: ["domain3"]
+        },
+        {
+            title: "Autonomous Vehicles in AI",
+            description: "How Can Explainable AI Techniques Be Applied to Improve the Transparency of<br> Autonomous Vehicles?<br><br>Asked by Kunal Rathi",
+            postUrl: "",
+            keywords: ["domain3"]
+        },
+        {
+            title: "Human-AI Collaboration",
+            description: "What Are the Emerging Trends in Human-AI Collaboration for Creative Tasks, Such as<br> Art and Music Production?<br><br>Asked by Aadit Singh",
+            postUrl: "",
+            keywords: ["domain3"]
+        } -->

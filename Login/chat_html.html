@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team and Personal Chats</title>
+    <link rel="stylesheet" href="chat_styles.css">
+</head>
+<body>
+   <!-- Top Navigation Bar -->
+   <div class="top-container">
+    <div class="left-align">
+        <div class="logo-circle">
+            <img src="WhatsApp Image 2023-09-22 at 12.26.57.jpg"  >
+        </div>
+        <input type="text" class="search-bar" placeholder="Search...">
+    </div>
+    <div class="right-align">
+        <a href="dashboard_html.html" id="navbar-links"><button class="home-button">Home</button></a>
+        <a href="about.html" id="navbar-links"><button class="about-button">About Us</button></a>
+        <!-- <button class="profile-button">Profile</button> -->
+        <!-- Profile Dropdown -->
+        <div class="profile-dropdown">
+            <button class="profile-button" onclick="toggleProfileDropdown()">Profile</button>
+            <div class="profile-dropdown-content" id="profile-dropdown-content">
+                <!-- Include the profile code here -->
+                <!-- For example: -->
+                <div class="profile template1">
+                    <h1 class="profile-heading">Profile</h1>
+                    <img src="WhatsApp Image 2023-09-22 at 18.34.00.jpg" alt="Profile Picture" id="profile-pic" onclick="expandProfile()">
+                    <div class="info">
+                        <p class="info-title">Name:</p>
+                        <p id="name">John</p>
+                        <p class="info-title">Batch:</p>
+                        <p id="batch">2025</p>
+                        <p class="info-title">Branch:</p>
+                        <p id="branch">Computer Science with specialization in AI and ML</p>
+                    </div>
+                    <!-- GitHub and LinkedIn buttons with impressive styles and spacing -->
+                    <div class="social-container">
+                        <a href="https://www.linkedin.com/in/johndoe" target="_blank">
+                            <img src="https://static-00.iconduck.com/assets.00/linkedin-icon-2048x2048-ya5g47j2.png" alt="LinkedIn Logo">
+                        </a>
+                        <a href="https://github.com/johndoe" target="_blank">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+                        </a>
+                    </div>
+                    <div class="projects">
+                        <button class="projects-btn" onclick="showMyProjects()"><a href="savedProjects.html" id="signout-link">My Projects</a></button>
+                    </div>
+                    <button class="signout-btn" onclick="signout()"><a href="index_login.html" id="signout-link">Sign Out</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+</div>
+
+<br><br><br><br>
+    <div class="container">
+        <!-- Left Container for Teams/Groups -->
+        <div class="left-container" style="background-color:#ffb579;">
+            <h2><a href="teamHTML.html" id="team-link">Teams</a></h2>
+            <div class="team-box" id="team-A">
+                <a href="#">Team A</a>
+            </div>
+            <div class="team-box" id="team-B">
+                <a href="#">Team B</a>
+            </div>
+            <div class="team-box" id="team-C">
+                <a href="#">Team C</a>
+            </div>
+            <!-- Add more teams or groups here -->
+        </div>
+        
+        <!-- Right Container for Personal Chats -->
+        <div class="right-container" >
+            <h2>Personal Chats</h2>
+            <div class="chat">
+                <div class="chat-header">
+                    <h2 class="chat-username">Ankita Das</h2>
+                    <span>Last seen 5 minutes ago</span>
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Static messages -->
+                    <div class="message received">
+                        <p>You: Hey...Ankita here!! Wanted to ask you about the SMART INDIA HACKATHON. Can you please share your previous experience?</p>
+                    </div>
+                    <div class="message sent">
+                        <p>Hi Ankita! My experience of SIH was very nice and full of learnings. I met a lot of new people and worked on some very great ideas that can help the Govt of India for future endeavours.</p>
+                    </div>
+                    <!-- Add more static messages here -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="message-input" placeholder="Type a message...">
+                    <button id="send-button">Send</button>
+                </div>
+            </div>
+            <!-- Add more personal chats here -->
+        </div>
+        
+        <!-- Right Panel for Personal Chat List -->
+        <div class="right-panel" style="background-color:#ffb579;">
+            <h2>Personal Chat List</h2>
+            <ul class="chat-list">
+                <li><a href="#" class="open-chat" data-user="Anubhuti Saxena">Anubhuti Saxena</a></li>
+                <li><a href="#" class="open-chat" data-user="Preksha Srivastava">Preksha Srivastava</a></li>
+                <li><a href="#" class="open-chat" data-user="Shaurya Shekhar">Shaurya Shekhar</a></li>
+                <!-- Add more personal chats here -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Pop-up for Teams -->
+    <div class="team-popup" id="team-popup">
+        <!-- Content for team pop-up -->
+    </div>
+
+    <script src="chat.js"></script>
+</body>
+</html>

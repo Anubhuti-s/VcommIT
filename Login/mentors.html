@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mentors_style.css">
+    <title>Mentors You Follow</title>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <div class="top-container">
+        <div class="left-align">
+            <div class="logo-circle">
+                <img src="WhatsApp Image 2023-09-22 at 12.26.57.jpg"  >
+            </div>
+            <input type="text" class="search-bar" placeholder="Search...">
+        </div>
+        <div class="right-align">
+            <a href="dashboard_html.html" id="navbar-links"><button class="home-button">Home</button></a>
+            <a href="about.html" id="navbar-links"><button class="about-button">About Us</button></a>
+            <!-- <button class="profile-button">Profile</button> -->
+            <!-- Profile Dropdown -->
+            <div class="profile-dropdown">
+                <button class="profile-button" onclick="toggleProfileDropdown()">Profile</button>
+                <div class="profile-dropdown-content" id="profile-dropdown-content">
+                    <!-- Include the profile code here -->
+                    <!-- For example: -->
+                    <div class="profile template1">
+                        <h1 class="profile-heading">Profile</h1>
+                        <img src="WhatsApp Image 2023-09-22 at 18.34.00.jpg" alt="Profile Picture" id="profile-pic" onclick="expandProfile()">
+                        <div class="info">
+                            <p class="info-title">Name:</p>
+                            <p id="name">John</p>
+                            <p class="info-title">Batch:</p>
+                            <p id="batch">2025</p>
+                            <p class="info-title">Branch:</p>
+                            <p id="branch">Computer Science with specialization in AI and ML</p>
+                        </div>
+                        <!-- GitHub and LinkedIn buttons with impressive styles and spacing -->
+                        <div class="social-container">
+                            <a href="https://www.linkedin.com/in/johndoe" target="_blank">
+                                <img src="https://static-00.iconduck.com/assets.00/linkedin-icon-2048x2048-ya5g47j2.png" alt="LinkedIn Logo">
+                            </a>
+                            <a href="https://github.com/johndoe" target="_blank">
+                                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+                            </a>
+                        </div>
+                        <div class="projects">
+                            <button class="projects-btn" onclick="showMyProjects()"><a href="savedProjects.html" id="signout-link">My Projects</a></button>
+                        </div>
+                        <button class="signout-btn" onclick="signout()"><a href="index_login.html" id="signout-link">Sign Out</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="container">
+        <h1>Mentors You Follow</h1>
+        <ul class="mentor-list" id="mentorList">
+            <!-- Mentor Items Will Be Added Here -->
+        </ul>
+    </div>
+
+    <!-- Lightbox Container -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Mentor's Picture" id="lightbox-image">
+        <button onclick="closeLightbox()" class="close-lightbox-button">Close</button>
+    </div>
+
+    <!-- JavaScript for Dynamic Mentor Addition, Button Toggle, and Lightbox -->
+    <script>
+        // Function to open the lightbox
+        function openLightbox(imageUrl) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImage = document.getElementById("lightbox-image");
+            lightboxImage.src = imageUrl;
+            lightbox.style.display = "flex";
+        }
+
+        // Function to close the lightbox
+        function closeLightbox() {
+            const lightbox = document.getElementById("lightbox");
+            lightbox.style.display = "none";
+        }
+
+        // Function to add a mentor to the list
+        function addMentor(name, description, imageUrl, profileUrl, mentorId) {
+            const mentorList = document.getElementById("mentorList");
+            const mentorItem = document.createElement("li");
+            mentorItem.className = "mentor-item";
+            mentorItem.id = mentorId;
+            mentorItem.innerHTML = `
+                <img src="${imageUrl}" alt="${name}" onclick="openLightbox('${imageUrl}')">
+                <div class="mentor-info">
+                    <p class="mentor-name">${name}</p>
+                    <div class="mentor-description-container">
+                        <p class="mentor-description">${description}</p>
+                    </div>
+                </div>
+                <button class="follow-button" onclick="toggleFollow(this, '${mentorId}')">Unfollow</button>
+            `;
+            mentorList.appendChild(mentorItem);
+        }
+
+        // Function to navigate to mentor's profile
+        function navigateToProfile(profileUrl) {
+            window.location.href = profileUrl;
+        }
+
+        // Function to toggle Follow/Unfollow
+        function toggleFollow(button, mentorId) {
+            if (button.innerHTML === "Unfollow") {
+                button.innerHTML = "Follow";
+                button.style.backgroundColor = "#0077B5"; // Change to LinkedIn Blue
+                // Remove the mentor item from the list
+                const mentorItem = document.getElementById(mentorId);
+                if (mentorItem) {
+                    mentorItem.remove();
+                }
+            } else {
+                button.innerHTML = "Unfollow";
+                button.style.backgroundColor = "#ff5733"; // Change back to red
+            }
+        }
+
+        // Example usage to add mentors with unique IDs
+        addMentor("Kanika Banerjee", "Faculty cabin: FB1-307A, PH.D. (REMOTE SENSING)", "https://media.istockphoto.com/id/1330255708/photo/portrait-of-smiling-teacher-in-school-corridor-with-books-in-hand.jpg?s=612x612&w=0&k=20&c=uL_vENUw7dccgUwjGcIwMMU_5Ew9BM5C8A0jInwn_hk=", "mentor_profile_1.html", "mentor1");
+        addMentor("ANAND A.", "Faculty cabin: FB2-307A, PH.D. (INFORMATION TECHNOLOGY)", "https://media.istockphoto.com/id/1005817658/photo/middle-aged-man-with-pleasant-face-expression.jpg?s=612x612&w=0&k=20&c=3YTdAT-m9io-zEF2aOmJsRz7tKVHlHSHvDFSILp6FAY=", "mentor_profile_2.html", "mentor2");
+        addMentor("Dr Archana Acharya", "Faculty cabin: FB2-307A, PH.D. (REMOTE SENSING)", "https://us.123rf.com/450wm/virtosmedia/virtosmedia2302/virtosmedia230232717/198632390-portrait-of-a-young-indian-female-teacher-smiling-at-the-camera.jpg?ver=6", "mentor_profile_3.html", "mentor3");
+        addMentor("Prashant Ranjan Sahay", "Faculty cabin: FB1-307A, PH.D. (HUMAN RESOURCE MANAGEMENT)", "https://static.toiimg.com/thumb/msid-95674022,width-400,resizemode-4/95674022.jpg", "mentor_profile_4.html", "mentor4");
+        addMentor("Smt Indira Singh", "Faculty cabin: FB1-307A, PH.D. (COMPUTER ENGINEERING)", "https://t3.ftcdn.net/jpg/04/48/03/56/360_F_448035690_o2uvf0WcCJcOkjoiDhCqHZdqoi8KzQzO.jpg", "mentor_profile_5.html", "mentor5");
+        addMentor("Dr. Kshma Swarnkar", "Faculty cabin: FB2-307A, PH.D. (BANKING & FINANCE)", "https://media.istockphoto.com/id/1288039261/photo/portrait-of-a-smiling-middle-aged-man-of-indian-origin.jpg?s=612x612&w=0&k=20&c=hksg2MpAsM6pQSR-TASLnfFE4-sDPcYHyE6-edycJDI=", "mentor_profile_6.html", "mentor6");
+        
+        // ... (Add more mentors as needed with unique IDs)
+    </script>
+    <script>
+        // Function to toggle the profile dropdown
+        function toggleProfileDropdown() {
+            var dropdownContent = document.getElementById("profile-dropdown-content");
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+        
